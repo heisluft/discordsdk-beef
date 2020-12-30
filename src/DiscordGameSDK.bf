@@ -197,7 +197,7 @@ namespace Discord {
 		internal static mixin MakeFromCharBuffer(var buffer)
 		{
 			var s = StringView(&buffer[0], buffer.Count);
-			for (int_strsize i < buffer.Count)
+			for (int i < buffer.Count)
 				if (buffer[i] == (char8)0)
 					s.Length = i;
 			s // Equate to appropriately sized view
@@ -247,7 +247,7 @@ namespace Discord {
 				set => SetCharBuffer!(avatar, value);
 			}
 		};
-		
+
 		[CRepr]
 		public struct DiscordOAuth2Token {
 			public char8[128] access_token;
@@ -266,26 +266,26 @@ namespace Discord {
 				set => SetCharBuffer!(scopes, value);
 			}
 		};
-		
+
 		[CRepr]
 		public struct DiscordImageHandle {
 			public EDiscordImageType type;
 			public int64 id;
 			public uint32 size;
 		};
-		
+
 		[CRepr]
 		public struct DiscordImageDimensions {
 			public uint32 width;
 			public uint32 height;
 		};
-		
+
 		[CRepr]
 		public struct DiscordActivityTimestamps {
 			public DiscordTimestamp start;
 			public DiscordTimestamp end;
 		};
-		
+
 		[CRepr]
 		public struct DiscordActivityAssets {
 			public char8[128] large_image;
