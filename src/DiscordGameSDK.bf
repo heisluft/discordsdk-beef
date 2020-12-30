@@ -413,6 +413,12 @@ namespace Discord {
 			public DiscordLobbySecret secret;
 			public uint32 capacity;
 			public bool locked;
+
+			public StringView Secret
+			{
+				get => MakeFromCharBuffer!(secret);
+				set => SetCharBuffer!(secret, value);
+			}
 		};
 
 		[CRepr]
@@ -479,6 +485,12 @@ namespace Discord {
 			public DiscordSnowflake achievement_id;
 			public uint8 percent_complete;
 			public DiscordDateTime unlocked_at;
+
+			public StringView UnlockedAt
+			{
+				get => MakeFromCharBuffer!(unlocked_at);
+				set => SetCharBuffer!(unlocked_at, value);
+			}
 		};
 
 		public function void Callback(void* callback_data, EDiscordResult result);
