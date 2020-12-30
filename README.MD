@@ -5,8 +5,8 @@ A port of the Discord Game SDK C-header to Beef with some additions to make inte
 Fixed size `char8[]` buffers can also be accessed as `StringView`:
 ```cs
 DiscordActivity activity = .();
-// activity.details is of type char8[128], so using it as or setting it from a variable sized string is tedious.
-// activity.Details does these conversions for you:
+// activity.details is of type char8[128], so using it as or setting it from
+// a string is tedious. activity.Details does these conversions for you:
 activity.Details = "A test string";
 ```
 
