@@ -7,17 +7,17 @@ StartupObject = "Discord.Program"
 DefaultNamespace = "Discord"
 
 [Configs.Debug.Win64]
-LibPaths = ["$(ProjectDir)\\\\dist\\\\x86_64\\\\discord_game_sdk.dll.lib"]
+LibPaths = ["$(ProjectDir)\\dist\\x86_64\\discord_game_sdk.dll.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86_64\\\\discord_game_sdk.dll\")"]
 
 [Configs.Release.Win64]
-LibPaths = ["$(ProjectDir)\\\\dist\\\\x86_64\\\\discord_game_sdk.dll.lib"]
+LibPaths = ["$(ProjectDir)\\dist\\x86_64\\discord_game_sdk.dll.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86_64\\\\discord_game_sdk.dll\")"]
 
 [Configs.Debug.Win32]
-LibPaths = ["$(ProjectDir)\\\\dist\\\\x86\\\\discord_game_sdk.dll.lib"]
+LibPaths = ["$(ProjectDir)\\dist\\x86\\discord_game_sdk.dll.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86\\\\discord_game_sdk.dll\")"]
 
 [Configs.Release.Win32]
-LibPaths = ["$(ProjectDir)\\\\dist\\\\x86\\\\discord_game_sdk.dll.lib"]
+LibPaths = ["$(ProjectDir)\\dist\\x86\\discord_game_sdk.dll.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86\\\\discord_game_sdk.dll\")"]
