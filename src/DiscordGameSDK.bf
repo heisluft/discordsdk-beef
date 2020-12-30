@@ -216,8 +216,7 @@ namespace Discord {
 		{
 			char8[Size] buf = .();
 			let limit = Math.Min((int)Size, str.Length);
-			for (int i < limit)
-				buf[i] = str[i];
+			Internal.MemCpy(&buf[0], &str[0], limit);
 			buf
 		}
 
