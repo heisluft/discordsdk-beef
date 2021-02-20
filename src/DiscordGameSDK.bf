@@ -1,7 +1,9 @@
 using System;
 
-namespace discordsdk_beef {
-	static class DiscordGameSDK {
+using internal Discord;
+
+namespace Discord {
+	static {
 
 		public const int32 DISCORD_VERSION = 2;
 		public const int32 DISCORD_APPLICATION_MANAGER_VERSION = 1;
@@ -18,162 +20,162 @@ namespace discordsdk_beef {
 		public const int32 DISCORD_ACHIEVEMENT_MANAGER_VERSION = 1;
 
 		public enum EDiscordResult {
-			DiscordResult_Ok = 0,
-			DiscordResult_ServiceUnavailable = 1,
-			DiscordResult_InvalidVersion = 2,
-			DiscordResult_LockFailed = 3,
-			DiscordResult_InternalError = 4,
-			DiscordResult_InvalidPayload = 5,
-			DiscordResult_InvalidCommand = 6,
-			DiscordResult_InvalidPermissions = 7,
-			DiscordResult_NotFetched = 8,
-			DiscordResult_NotFound = 9,
-			DiscordResult_Conflict = 10,
-			DiscordResult_InvalidSecret = 11,
-			DiscordResult_InvalidJoinSecret = 12,
-			DiscordResult_NoEligibleActivity = 13,
-			DiscordResult_InvalidInvite = 14,
-			DiscordResult_NotAuthenticated = 15,
-			DiscordResult_InvalidAccessToken = 16,
-			DiscordResult_ApplicationMismatch = 17,
-			DiscordResult_InvalidDataUrl = 18,
-			DiscordResult_InvalidBase64 = 19,
-			DiscordResult_NotFiltered = 20,
-			DiscordResult_LobbyFull = 21,
-			DiscordResult_InvalidLobbySecret = 22,
-			DiscordResult_InvalidFilename = 23,
-			DiscordResult_InvalidFileSize = 24,
-			DiscordResult_InvalidEntitlement = 25,
-			DiscordResult_NotInstalled = 26,
-			DiscordResult_NotRunning = 27,
-			DiscordResult_InsufficientBuffer = 28,
-			DiscordResult_PurchaseCanceled = 29,
-			DiscordResult_InvalidGuild = 30,
-			DiscordResult_InvalidEvent = 31,
-			DiscordResult_InvalidChannel = 32,
-			DiscordResult_InvalidOrigin = 33,
-			DiscordResult_RateLimited = 34,
-			DiscordResult_OAuth2Error = 35,
-			DiscordResult_SelectChannelTimeout = 36,
-			DiscordResult_GetGuildTimeout = 37,
-			DiscordResult_SelectVoiceForceRequired = 38,
-			DiscordResult_CaptureShortcutAlreadyListening = 39,
-			DiscordResult_UnauthorizedForAchievement = 40,
-			DiscordResult_InvalidGiftCode = 41,
-			DiscordResult_PurchaseError = 42,
-			DiscordResult_TransactionAborted = 43,
+			Ok = 0,
+			ServiceUnavailable = 1,
+			InvalidVersion = 2,
+			LockFailed = 3,
+			InternalError = 4,
+			InvalidPayload = 5,
+			InvalidCommand = 6,
+			InvalidPermissions = 7,
+			NotFetched = 8,
+			NotFound = 9,
+			Conflict = 10,
+			InvalidSecret = 11,
+			InvalidJoinSecret = 12,
+			NoEligibleActivity = 13,
+			InvalidInvite = 14,
+			NotAuthenticated = 15,
+			InvalidAccessToken = 16,
+			ApplicationMismatch = 17,
+			InvalidDataUrl = 18,
+			InvalidBase64 = 19,
+			NotFiltered = 20,
+			LobbyFull = 21,
+			InvalidLobbySecret = 22,
+			InvalidFilename = 23,
+			InvalidFileSize = 24,
+			InvalidEntitlement = 25,
+			NotInstalled = 26,
+			NotRunning = 27,
+			InsufficientBuffer = 28,
+			PurchaseCanceled = 29,
+			InvalidGuild = 30,
+			InvalidEvent = 31,
+			InvalidChannel = 32,
+			InvalidOrigin = 33,
+			RateLimited = 34,
+			OAuth2Error = 35,
+			SelectChannelTimeout = 36,
+			GetGuildTimeout = 37,
+			SelectVoiceForceRequired = 38,
+			CaptureShortcutAlreadyListening = 39,
+			UnauthorizedForAchievement = 40,
+			InvalidGiftCode = 41,
+			PurchaseError = 42,
+			TransactionAborted = 43,
 		};
 
 		public enum EDiscordCreateFlags {
-			DiscordCreateFlags_Default = 0,
-			DiscordCreateFlags_NoRequireDiscord = 1,
+			Default = 0,
+			NoRequireDiscord = 1,
 		};
 
 		public enum EDiscordLogLevel {
-			DiscordLogLevel_Error = 1,
-			DiscordLogLevel_Warn,
-			DiscordLogLevel_Info,
-			DiscordLogLevel_Debug,
+			Error = 1,
+			Warn,
+			Info,
+			Debug,
 		};
 
 		public enum EDiscordUserFlag {
-			DiscordUserFlag_Partner = 2,
-			DiscordUserFlag_HypeSquadEvents = 4,
-			DiscordUserFlag_HypeSquadHouse1 = 64,
-			DiscordUserFlag_HypeSquadHouse2 = 128,
-			DiscordUserFlag_HypeSquadHouse3 = 256,
+			Partner = 2,
+			HypeSquadEvents = 4,
+			HypeSquadHouse1 = 64,
+			HypeSquadHouse2 = 128,
+			HypeSquadHouse3 = 256,
 		};
 
 		public enum EDiscordPremiumType {
-			DiscordPremiumType_None = 0,
-			DiscordPremiumType_Tier1 = 1,
-			DiscordPremiumType_Tier2 = 2,
+			None = 0,
+			Tier1 = 1,
+			Tier2 = 2,
 		};
 
 		public enum EDiscordImageType {
-			DiscordImageType_User,
+			User,
 		};
 
 		public enum EDiscordActivityType {
-			DiscordActivityType_Playing,
-			DiscordActivityType_Streaming,
-			DiscordActivityType_Listening,
-			DiscordActivityType_Watching,
+			Playing,
+			Streaming,
+			Listening,
+			Watching,
 		};
 
 		public enum EDiscordActivityActionType {
-			DiscordActivityActionType_Join = 1,
-			DiscordActivityActionType_Spectate,
+			Join = 1,
+			Spectate,
 		};
 
 		public enum EDiscordActivityJoinRequestReply {
-			DiscordActivityJoinRequestReply_No,
-			DiscordActivityJoinRequestReply_Yes,
-			DiscordActivityJoinRequestReply_Ignore,
+			No,
+			Yes,
+			Ignore,
 		};
 
 		public enum EDiscordStatus {
-			DiscordStatus_Offline = 0,
-			DiscordStatus_Online = 1,
-			DiscordStatus_Idle = 2,
-			DiscordStatus_DoNotDisturb = 3,
+			Offline = 0,
+			Online = 1,
+			Idle = 2,
+			DoNotDisturb = 3,
 		};
 
 		public enum EDiscordRelationshipType {
-			DiscordRelationshipType_None,
-			DiscordRelationshipType_Friend,
-			DiscordRelationshipType_Blocked,
-			DiscordRelationshipType_PendingIncoming,
-			DiscordRelationshipType_PendingOutgoing,
-			DiscordRelationshipType_Implicit,
+			None,
+			Friend,
+			Blocked,
+			PendingIncoming,
+			PendingOutgoing,
+			Implicit,
 		};
 
 		public enum EDiscordLobbyType {
-			DiscordLobbyType_Private = 1,
-			DiscordLobbyType_Public,
+			Private = 1,
+			Public,
 		};
 
 		public enum EDiscordLobbySearchComparison {
-			DiscordLobbySearchComparison_LessThanOrEqual = -2,
-			DiscordLobbySearchComparison_LessThan,
-			DiscordLobbySearchComparison_Equal,
-			DiscordLobbySearchComparison_GreaterThan,
-			DiscordLobbySearchComparison_GreaterThanOrEqual,
-			DiscordLobbySearchComparison_NotEqual,
+			LessThanOrEqual = -2,
+			LessThan,
+			Equal,
+			GreaterThan,
+			GreaterThanOrEqual,
+			NotEqual,
 		};
 
 		public enum EDiscordLobbySearchCast {
-			DiscordLobbySearchCast_String = 1,
-			DiscordLobbySearchCast_Number,
+			String = 1,
+			Number,
 		};
 
 		public enum EDiscordLobbySearchDistance {
-			DiscordLobbySearchDistance_Local,
-			DiscordLobbySearchDistance_Default,
-			DiscordLobbySearchDistance_Extended,
-			DiscordLobbySearchDistance_Global,
+			Local,
+			Default,
+			Extended,
+			Global,
 		};
 
 		public enum EDiscordEntitlementType {
-			DiscordEntitlementType_Purchase = 1,
-			DiscordEntitlementType_PremiumSubscription,
-			DiscordEntitlementType_DeveloperGift,
-			DiscordEntitlementType_TestModePurchase,
-			DiscordEntitlementType_FreePurchase,
-			DiscordEntitlementType_UserGift,
-			DiscordEntitlementType_PremiumPurchase,
+			Purchase = 1,
+			PremiumSubscription,
+			DeveloperGift,
+			TestModePurchase,
+			FreePurchase,
+			UserGift,
+			PremiumPurchase,
 		};
 
 		public enum EDiscordSkuType {
-			DiscordSkuType_Application = 1,
-			DiscordSkuType_DLC,
-			DiscordSkuType_Consumable,
-			DiscordSkuType_Bundle,
+			Application = 1,
+			DLC,
+			Consumable,
+			Bundle,
 		};
 
 		public enum EDiscordInputModeType {
-			DiscordInputModeType_VoiceActivity = 0,
-			DiscordInputModeType_PushToTalk,
+			VoiceActivity = 0,
+			PushToTalk,
 		};
 
 		public typealias DiscordClientId = int64;
@@ -192,6 +194,32 @@ namespace discordsdk_beef {
 		public typealias DiscordPath = char8[4096];
 		public typealias DiscordDateTime = char8[64];
 
+		internal static mixin MakeFromCharBuffer(var buffer)
+		{
+			var s = StringView(&buffer[0], buffer.Count);
+			for (int i < buffer.Count)
+				if (buffer[i] == (char8)0)
+					s.Length = i;
+			s // Equate to appropriately sized view
+		}
+
+		internal static mixin SetCharBuffer(var buffer, StringView str)
+		{
+			str.CopyTo(Span<char8>(&buffer[0], buffer.Count));
+
+			if (buffer.Count > str.Length)
+				Internal.MemSet(&buffer[str.Length], 0, buffer.Count - str.Length); // Clear remaining
+		}
+
+		// Use these to pass strings into functions that require "DiscordLobbySecret", ... (fixed sized arrays)
+		public static mixin MakeCharBuffer<Size>(Size expectedSize, StringView str) where Size : const int
+		{
+			char8[Size] buf = .();
+			let limit = Math.Min((int)Size, str.Length);
+			Internal.MemCpy(&buf[0], &str[0], limit);
+			buf
+		}
+
 		[CRepr]
 		public struct DiscordUser {
 			public DiscordUserId id;
@@ -199,40 +227,94 @@ namespace discordsdk_beef {
 			public char8[8] discriminator;
 			public char8[128] avatar;
 			public bool bot;
+
+			public StringView Username
+			{
+				get => MakeFromCharBuffer!(username);
+				set => SetCharBuffer!(username, value);
+			}
+
+			public StringView Discriminator
+			{
+				get => MakeFromCharBuffer!(discriminator);
+				set => SetCharBuffer!(discriminator, value);
+			}
+
+			public StringView Avatar
+			{
+				get => MakeFromCharBuffer!(avatar);
+				set => SetCharBuffer!(avatar, value);
+			}
 		};
-		
+
 		[CRepr]
 		public struct DiscordOAuth2Token {
 			public char8[128] access_token;
 			public char8[1024] scopes;
 			public DiscordTimestamp expires;
+
+			public StringView AccessToken
+			{
+				get => MakeFromCharBuffer!(access_token);
+				set => SetCharBuffer!(access_token, value);
+			}
+
+			public StringView Scopes
+			{
+				get => MakeFromCharBuffer!(scopes);
+				set => SetCharBuffer!(scopes, value);
+			}
 		};
-		
+
 		[CRepr]
 		public struct DiscordImageHandle {
 			public EDiscordImageType type;
 			public int64 id;
 			public uint32 size;
 		};
-		
+
 		[CRepr]
 		public struct DiscordImageDimensions {
 			public uint32 width;
 			public uint32 height;
 		};
-		
+
 		[CRepr]
 		public struct DiscordActivityTimestamps {
 			public DiscordTimestamp start;
 			public DiscordTimestamp end;
 		};
-		
+
 		[CRepr]
 		public struct DiscordActivityAssets {
 			public char8[128] large_image;
 			public char8[128] large_text;
 			public char8[128] small_image;
 			public char8[128] small_text;
+
+			public StringView LargeImage
+			{
+				get => MakeFromCharBuffer!(large_image);
+				set => SetCharBuffer!(large_image, value);
+			}
+
+			public StringView LargeText
+			{
+				get => MakeFromCharBuffer!(large_text);
+				set => SetCharBuffer!(large_text, value);
+			}
+
+			public StringView SmallImage
+			{
+				get => MakeFromCharBuffer!(small_image);
+				set => SetCharBuffer!(small_image, value);
+			}
+
+			public StringView SmallText
+			{
+				get => MakeFromCharBuffer!(small_text);
+				set => SetCharBuffer!(small_text, value);
+			}
 		};
 
 		[CRepr]
@@ -245,6 +327,12 @@ namespace discordsdk_beef {
 		public struct DiscordActivityParty {
 			public char8[128] id;
 			public DiscordPartySize size;
+
+			public StringView Id
+			{
+				get => MakeFromCharBuffer!(id);
+				set => SetCharBuffer!(id, value);
+			}
 		};
 
 		[CRepr]
@@ -252,6 +340,24 @@ namespace discordsdk_beef {
 			public char8[128] match;
 			public char8[128] join;
 			public char8[128] spectate;
+
+			public StringView Match
+			{
+				get => MakeFromCharBuffer!(match);
+				set => SetCharBuffer!(match, value);
+			}
+
+			public StringView Join
+			{
+				get => MakeFromCharBuffer!(join);
+				set => SetCharBuffer!(join, value);
+			}
+
+			public StringView Spectate
+			{
+				get => MakeFromCharBuffer!(spectate);
+				set => SetCharBuffer!(spectate, value);
+			}
 		};
 
 		[CRepr]
@@ -266,6 +372,24 @@ namespace discordsdk_beef {
 			public DiscordActivityParty party;
 			public DiscordActivitySecrets secrets;
 			public bool instance;
+
+			public StringView Name
+			{
+				get => MakeFromCharBuffer!(name);
+				set => SetCharBuffer!(name, value);
+			}
+
+			public StringView State
+			{
+				get => MakeFromCharBuffer!(state);
+				set => SetCharBuffer!(state, value);
+			}
+
+			public StringView Details
+			{
+				get => MakeFromCharBuffer!(details);
+				set => SetCharBuffer!(details, value);
+			}
 		};
 
 		[CRepr]
@@ -289,6 +413,12 @@ namespace discordsdk_beef {
 			public DiscordLobbySecret secret;
 			public uint32 capacity;
 			public bool locked;
+
+			public StringView Secret
+			{
+				get => MakeFromCharBuffer!(secret);
+				set => SetCharBuffer!(secret, value);
+			}
 		};
 
 		[CRepr]
@@ -296,6 +426,12 @@ namespace discordsdk_beef {
 			public char8[260] filename;
 			public uint64 size;
 			public uint64 last_modified;
+
+			public StringView Filename
+			{
+				get => MakeFromCharBuffer!(filename);
+				set => SetCharBuffer!(filename, value);
+			}
 		};
 
 		[CRepr]
@@ -309,6 +445,12 @@ namespace discordsdk_beef {
 		public struct DiscordSkuPrice {
 			public uint32 amount;
 			public char8[16] currency;
+
+			public StringView Currency
+			{
+				get => MakeFromCharBuffer!(currency);
+				set => SetCharBuffer!(currency, value);
+			}
 		};
 
 		[CRepr]
@@ -317,12 +459,24 @@ namespace discordsdk_beef {
 			public EDiscordSkuType type;
 			public char8[256] name;
 			public DiscordSkuPrice price;
+
+			public StringView Name
+			{
+				get => MakeFromCharBuffer!(name);
+				set => SetCharBuffer!(name, value);
+			}
 		};
 
 		[CRepr]
 		public struct DiscordInputMode {
 			public EDiscordInputModeType type;
 			public char8[256] shortcut;
+
+			public StringView Shortcut
+			{
+				get => MakeFromCharBuffer!(shortcut);
+				set => SetCharBuffer!(shortcut, value);
+			}
 		};
 
 		[CRepr]
@@ -331,6 +485,12 @@ namespace discordsdk_beef {
 			public DiscordSnowflake achievement_id;
 			public uint8 percent_complete;
 			public DiscordDateTime unlocked_at;
+
+			public StringView UnlockedAt
+			{
+				get => MakeFromCharBuffer!(unlocked_at);
+				set => SetCharBuffer!(unlocked_at, value);
+			}
 		};
 
 		public function void Callback(void* callback_data, EDiscordResult result);

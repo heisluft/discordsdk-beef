@@ -1,10 +1,23 @@
 FileVersion = 1
 
 [Project]
-Name = "discordsdk-beef"
+Name = "DiscordGameSDK-Beef"
 TargetType = "BeefLib"
-StartupObject = "discordsdk_beef.Program"
+StartupObject = "Discord.Program"
+DefaultNamespace = "Discord"
 
 [Configs.Debug.Win64]
 LibPaths = ["$(ProjectDir)\\dist\\x86_64\\discord_game_sdk.dll.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86_64\\\\discord_game_sdk.dll\")"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)\\dist\\x86_64\\discord_game_sdk.dll.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86_64\\\\discord_game_sdk.dll\")"]
+
+[Configs.Debug.Win32]
+LibPaths = ["$(ProjectDir)\\dist\\x86\\discord_game_sdk.dll.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86\\\\discord_game_sdk.dll\")"]
+
+[Configs.Release.Win32]
+LibPaths = ["$(ProjectDir)\\dist\\x86\\discord_game_sdk.dll.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)\\\\dist\\\\x86\\\\discord_game_sdk.dll\")"]
